@@ -10,13 +10,29 @@ def play(number_of_tries):
 
     for i in range(number_of_tries):
         number_of_guess_left = number_of_tries - i
+        if (number_of_guess_left == 1):
+            suffix = ''
+        else: 
+            suffix = 'es'
+
+        if (number_of_guess_left == 1):
+            adj1 = 'just '
+        else:
+            adj1 = ''
+        
+        if (1 < number_of_guess_left < number_of_tries):
+            adj2 = 'more '
+        else:
+            adj2 = ''
+        
+        print(f"You have {adj1}{number_of_guess_left} {adj2}guess{suffix} left.")
         guess = int(input("Guess a number between 1 and 20: "))
         if (answer > guess):
             number_of_guess_left = number_of_guess_left - 1
-            print(f"The answer is higher. You have {number_of_guess_left} more guess left.")
+            print(f"The answer is higher.")
         elif (answer < guess):
             number_of_guess_left = number_of_guess_left - 1
-            print(f"The answer is lower. You have {number_of_guess_left} more guess left.")
+            print(f"The answer is lower.")
         else:
             print("You guessed it right!")
             return
