@@ -35,3 +35,12 @@ letters3 = list(letters)  # This creates a new list that is a copy of the origin
 letters.append('f')  # This will modify the original list that letters3 does not reference
 print(letters)  # Output: ['a', 'b', 'c', 'd', 'e', 'f']
 print(letters3)  # Output: ['a', 'b', 'c', 'd', 'e']
+
+nested_list = [[1,2,3],
+               [4,5,6],
+               [7,8,9]]
+print(nested_list)  # Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+nested_list[1][0] = 1000
+
+print(nested_list)  # Output: [[1, 2, 3], [1000, 5, 6], [7, 8, 9]]
