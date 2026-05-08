@@ -35,3 +35,6 @@ print(f"'time' < 'money' is {'time' < 'money'}")               # False
 print(f"'time' == 'turn' is {'time' == 'turn'}")               # False
 print(f"'time' >= 'turn' is {'time' >= 'turn'}")               # False
 print(f"'time' <= 'turn' is {'time' <= 'turn'}")               # True
+
+print(f"Boolean of empty string is {bool('')}" )               # False (empty string is falsy) 
+print(f"Boolean of non-empty string is {bool(' ')}")           # True (non-empty string is truthy)
