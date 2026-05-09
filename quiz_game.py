@@ -40,7 +40,8 @@ def get_missed_answers(missed_answers):
     if len(missed_answers) == 0:
         return "Congratulations! You got all the answers!"
     else: 
-        return f"You missed the following {len(missed_answers)} answers: {', '.join(missed_answers)}"
+        suffix = '' if len(missed_answers) == 1 else 's'
+        return f"You missed the following {len(missed_answers)} answer{suffix}: {', '.join(missed_answers)}"
 
 if __name__ == "__main__":
     play()
