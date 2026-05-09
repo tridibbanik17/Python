@@ -3,7 +3,8 @@
 # If they give up and quit, print out all of the ones that were missed
 
 def play():
-    answer_list = ["Vatican City", "Vanuatu", "Venezuela", "Vietnam"]
+    with open("V_countries.txt") as file:
+        answer_list = file.read().split("\n")
     num_of_answers = len(answer_list)
     user_answer_list = []
     missed_answers = []
@@ -35,6 +36,9 @@ def play():
             break
         else:
             print("Incorrect. Try again.")
+    # If user finished all answers without quitting
+    if len(user_answer_list) == len(answer_list):
+        print(get_missed_answers([]))
 
 def get_missed_answers(missed_answers):
     if len(missed_answers) == 0:
