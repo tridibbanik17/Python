@@ -31,14 +31,16 @@ def play():
             for answer in answer_list:
                 if answer not in user_answer_list:
                     missed_answers.append(answer)
+            print(get_missed_answers(missed_answers))
             break
         else:
             print("Incorrect. Try again.")
-    if len(missed_answers) == 0:
-        print("Congratulations! You got all the answers!")
-    else: 
-        print(f"You missed the following {len(missed_answers)} answers:")
-        missed = ', '.join(missed_answers)
-        print(missed)
 
-play()
+def get_missed_answers(missed_answers):
+    if len(missed_answers) == 0:
+        return "Congratulations! You got all the answers!"
+    else: 
+        return f"You missed the following {len(missed_answers)} answers: {', '.join(missed_answers)}"
+
+if __name__ == "__main__":
+    play()
